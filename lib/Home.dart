@@ -44,65 +44,22 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         centerTitle: true,
         bottom: TabBar(
-          tabs: <Widget>[
+          tabs:[
             Tab(icon: Icon(Icons.business)),
             Tab(icon: Icon(Icons.call_missed)),
             Tab(icon: Icon(Icons.category))
-
           ],
         ),
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            TextField(
-              
-            ),
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-              icon: Icon(Icons.business), title: Text("Home")),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.call), title: Text("Mobile")),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.settings), title: Text("Settings"))
+      body: TabBarView(
+        children:[
+          Icon(Icons.access_alarm),
+          Icon(Icons.call_made),
+          Icon(Icons.account_box)
         ],
       ),
+      
      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
